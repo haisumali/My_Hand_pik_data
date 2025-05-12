@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "default": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "default",
+            "stream": "ext://sys.stdout"
+        },
+        "khaddi_handler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "default",
+            "filename": "D:/handpik_data/handpik/logs/khaddi.log",
+            "maxBytes": 10485760,
+            "backupCount": 3
+        }
+    },
+    "loggers": {
+        "": {
+            "handlers": ["console", "khaddi_handler"],
+            "level": "DEBUG",
+            "propagate": true
+        }
+    }
+}

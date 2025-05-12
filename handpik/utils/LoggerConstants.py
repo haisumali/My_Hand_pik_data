@@ -1,0 +1,1 @@
+KHADDI_LOGGER = "khaddi"
